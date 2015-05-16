@@ -20,7 +20,8 @@ var nAfter  = 0;
 			caseSensitive = false,
 			searchFieldVal = '',
 			pattern = '';
-		inputObj.off('keyup').on('keyup', function(){
+		inputObj.change( function(){
+			$('table.table').removeHighlight();
 			searchFieldVal = $(this).val();
 			pattern = (caseSensitive)?RegExp('.*\\b'+searchFieldVal+'\\b.*'):RegExp('.*\\b'+searchFieldVal+'\\b.*', 'i');
 			tableObj.find('tbody tr').hide().each(function(){
