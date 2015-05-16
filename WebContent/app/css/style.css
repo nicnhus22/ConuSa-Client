@@ -33,4 +33,8 @@ ul#app_list li {
 
 #word_occurence {
 	padding:20px 0;
-} 
+}
+
+.highlight {
+	background-color:rgba(0,0,0,0.2);
+}
