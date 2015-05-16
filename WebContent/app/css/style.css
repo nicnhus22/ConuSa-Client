@@ -15,7 +15,22 @@ ul#app_list li {
 		-moz-box-sizing:border-box;
 			box-sizing:border-box;
 }
-
 .app {
 	cursor:pointer;
 }
+
+#search_table {
+	width:100%;
+	padding:5px;
+	font-size:20px;
+	margin:10px 0;
+}
+
+.word {
+	display:inline-block;
+	margin-right:10px;
+}
+
+#word_occurence {
+	padding:20px 0;
+} 

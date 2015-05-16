@@ -13,17 +13,33 @@ $(document).ready(function(){
 function fetchReviews(appName){
 	$.get("http://localhost:8080/conusa/backend/app/service/review", {name:appName,rating:selectedTab.substr(selectedTab.length - 1)} ,
 	    function(response) {
-			var reviewsTemplate = ''
-		       $.each(response, function(key,val){
-		    	   reviewsTemplate += '<tr><td>'+val+'</td></tr>';
-		      });
+			// console.log(response);
+		
+			// Display reviews
+			var reviewsTemplate = '';
+		    $.each(response.reviews, function(key,val){
+		       reviewsTemplate += '<tr><td>'+val+'</td></tr>';
+		    });
 			var table = '<table class="table table-hover">'+
 							'<tbody>'+
 								reviewsTemplate
 							'</tbody>'+
 						'</table>';
 			$(selectedTab).html(table);
-	    });
+			$('table.table').tableSearch({
+                searchText:'Search Table',
+                searchPlaceHolder:'Input Value'
+            });
+			
+			// Display Occurence Map
+			$("#word_occurence").html("")
+			var occurences = response.occurenceMap;
+			for(var i in occurences){
+				var word = occurences[i].word;
+				var occu = occurences[i].occurence;
+				$("#word_occurence").append('<a class="word" href="#">'+word+' <span class="badge">'+occu+'</span></a>')
+			}
+	});
 }
 
 function fetchApplications(appName, all){

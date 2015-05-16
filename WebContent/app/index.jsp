@@ -73,11 +73,16 @@
 				    	</a>
 				    </li>
 				  </ul>
-				
+				  
+				  <div id="word_occurence">
+				  	
+				  </div>
+				  <input type="text" id="search_table" placeholder="Search reviews..."/>
+				  <!--  <span class="badge">42</span>  -->
 				  <!-- Tab panes -->
 				  <div class="tab-content">
 				    <div role="tabpanel" class="tab-pane active" id="star_5">
-				    
+				    	
 				    </div>
 				    <div role="tabpanel" class="tab-pane" id="star_4">
 				    
@@ -97,8 +102,9 @@
 	    </div><!-- /.container -->
 		
 			
-		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+		<script src="js/jquery.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/table-search.js" type="text/javascript"></script>
         <script src="js/main.js" type="text/javascript"></script>
         
 	</body>
