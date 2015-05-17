@@ -6,6 +6,10 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Concordia | GooglePlay</title>
 		
+		<!-- Open Sans 
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800' rel='stylesheet' type='text/css'>
+		-->
+		
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -27,7 +31,7 @@
 	        <div id="navbar" class="collapse navbar-collapse">
 	          <ul class="nav navbar-nav">
 	            <li class="active"><a href="#">Home</a></li>
-	            <li><a href="#about">About</a></li>
+	            <li><a href="#about">BigData</a></li>
 	            <li><a href="#contact">Contact</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
@@ -37,13 +41,23 @@
 	    <div class="container">
 	    	<div class="inner_container">
 	    		<ul id="app_list">
-	    			
 	    		</ul>
 	    	</div>
 	    </div>
-	
+
+		
 	    <div class="container">
-	    	<div class="inner_container">
+	    	<div id="app_info" class="chart-horiz">
+				<h1 id="app_title">Dropbox</h1>
+				<ul class="chart" id="app_rating_chart">
+  					<li class="title" title="Rating"></li>
+  				</ul>
+	    	</div>
+	    </div>
+	
+		
+	    <div class="container">
+	    	<div class="">
 	    		<div role="tabpanel">
 				  <!-- Nav tabs -->
 				  <ul class="nav nav-tabs" role="tablist">
@@ -108,6 +122,7 @@
 		
 		<script src="js/jquery.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/horizontalChart.js" type="text/javascript"></script>
         <script src="js/highlight.js" type="text/javascript"></script>
         <script src="js/table-search.js" type="text/javascript"></script>
         <script src="js/main.js" type="text/javascript"></script>

@@ -7,6 +7,7 @@ $(document).ready(function(){
 	$('#star_5').tab('show');
 	fetchApplications("",true);
 	fetchReviews(selectedApp);
+	fetchAppInformation(selectedApp);
 });
 
 
@@ -57,5 +58,32 @@ function fetchApplications(appName, all){
 		      });
 			  selectedApp = applications[0];
 		      $("#app_list").html(appTemplate);
+		      
+			  $("ul#app_list li img").css("opacity","0.2");
+			  $("#"+selectedApp).css("opacity","1");
+	    });
+}
+
+function fetchAppInformation(appName){
+	$.get("http://localhost:8080/conusa/backend/app/service/application", {name:appName,fetchAll:false} ,
+	    function(response) {
+		     console.log(response);	  
+		     
+		     var chart = '';
+		     var title = '';
+		     $.each(response, function(key,val){
+		    	 title = key;
+		    	 chart += '<li class="past" title="Five"><span class="bar" data-number="'+val.five+'"></span><span class="number">'+val.five+'</span></li>';
+		    	 chart += '<li class="past" title="Four"><span class="bar" data-number="'+val.four+'"></span><span class="number">'+val.four+'</span></li>';
+		    	 chart += '<li class="past" title="Three"><span class="bar" data-number="'+val.three+'"></span><span class="number">'+val.three+'</span></li>';
+		    	 chart += '<li class="past" title="Two"><span class="bar" data-number="'+val.two+'"></span><span class="number">'+val.two+'</span></li>';
+		    	 chart += '<li class="past" title="One"><span class="bar" data-number="'+val.one+'"></span><span class="number">'+val.one+'</span></li>';
+		     });
+		     $("#app_title").html(title);
+		     $("#app_rating_chart").append(chart);
+		     $('.chart').horizBarChart({
+	    	  selector: '.bar',
+	    	  speed: 3000
+	    	});
 	    });
 }

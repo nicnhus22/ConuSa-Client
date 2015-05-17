@@ -1,4 +1,9 @@
 
+* {
+	font-family:"Open Sans", Helvetica Neue, sans-serif;
+}
+
+
 .inner_container {
 	padding:100px 0;
 }
@@ -38,3 +43,69 @@ ul#app_list li {
 .highlight {
 	background-color:rgba(0,0,0,0.2);
 }
+
+#app_info {
+	width:100%;
+	padding:20px 20px;
+	text-align:center;
+}
+#app_info h1 {
+	border-top: 1px solid rgba(0,0,0,0.2);
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	padding: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.chart-horiz .chart { width: 90%;text-align: left; }
+
+.chart-horiz .chart li {
+  display: block;
+  height: 23px;
+  margin-top: 3px;
+  position: relative
+}
+
+.chart-horiz .chart li:before {
+  color: #fff;
+  content: attr(title);
+  left: 5px;
+  position: absolute
+}
+
+.chart-horiz .chart li.title:before {
+  color: black;
+  font-weight: bold;
+  left: 0
+}
+
+.chart-horiz .chart li:first-child { margin-top: 0 }
+
+.chart-horiz .chart li .bar {
+  background: #38AFDF;
+  height: 100%;
+  min-width: 164px
+}
+
+.chart-horiz .chart li .number {
+  color: #27ae60;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 5px;
+  position: absolute;
+  top: -3px
+}
+
+.chart-horiz .chart li.past .bar { background: #38AFDF }
+
+.chart-horiz .chart li.past .number { color: #2ecc71 }
+
+

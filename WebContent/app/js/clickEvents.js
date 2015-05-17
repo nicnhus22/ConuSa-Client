@@ -1,10 +1,13 @@
 function onAppClick(application){
+	// Clear values
 	$('#search_table').val("");
 	$(selectedTabHeader+" a").children('span.badge').remove();
+	$("ul.chart").children(".past").remove();
 	var app = $(application).attr("id");
 	$("ul#app_list li img").css("opacity","0.2");
 	$("#"+app).css("opacity","1");
 	selectedApp = app;
+	fetchAppInformation(selectedApp);
 	fetchReviews(selectedApp);
 }
 
