@@ -74,9 +74,13 @@
 				    </li>
 				  </ul>
 				  
-				  <div id="word_occurence">
-				  	
-				  </div>
+				  
+				  <!-- Review Count -->
+				  <div id="review_count"></div>
+				  
+				  <!-- Occurence Map -->
+				  <div id="word_occurence"></div>
+				  
 				  <input type="text" id="search_table" placeholder="Search reviews..."/>
 				  <!--  <span class="badge">42</span>  -->
 				  <!-- Tab panes -->

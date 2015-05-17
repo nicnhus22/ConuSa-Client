@@ -1,7 +1,9 @@
 function onAppClick(application){
+	$('#search_table').val("");
+	$(selectedTabHeader+" a").children('span.badge').remove();
 	var app = $(application).attr("id");
-	$("#"+selectedApp).css("border","none");
-	$("#"+app).css("border","2px solid rgba(0,0,0,0.1)");
+	$("ul#app_list li img").css("opacity","0.2");
+	$("#"+app).css("opacity","1");
 	selectedApp = app;
 	fetchReviews(selectedApp);
 }
@@ -11,38 +13,32 @@ function onWordClick(word){
 	$('#search_table').val(word).change();
 }
 	
+function onTabClick(tabNumber){
+	$(selectedTabHeader+" a").children('span.badge').remove();
+	$('#search_table').val("");
+	selectedTab = "#star_"+tabNumber;
+	selectedTabHeader = "#tab_star_"+tabNumber; 
+	$('#star_'+tabNumber).tab('show');
+	fetchReviews(selectedApp);
+}
+
 $('#tab_star_5').click(function (e) {
   e.preventDefault();
-  $('#search_table').val("");
-  selectedTab = "#star_5";
-  $('#star_5').tab('show');
-  fetchReviews(selectedApp);
+  onTabClick(5);
 });
 $('#tab_star_4').click(function (e) {
   e.preventDefault();
-  $('#search_table').val("");
-  selectedTab = "#star_4";
-  $('#star_4').tab('show');
-  fetchReviews(selectedApp);
+  onTabClick(4);
 });
 $('#tab_star_3').click(function (e) {
   e.preventDefault();
-  $('#search_table').val("");
-  selectedTab = "#star_3";
-  $('#star_3').tab('show');
-  fetchReviews(selectedApp);
+  onTabClick(3);
 });
 $('#tab_star_2').click(function (e) {
   e.preventDefault();
-  $('#search_table').val("");
-  selectedTab = "#star_2";
-  $('#star_2').tab('show');
-  fetchReviews(selectedApp);
+  onTabClick(2);
 });
 $('#tab_star_1').click(function (e) {
   e.preventDefault();
-  $('#search_table').val("");
-  selectedTab = "#star_1";
-  $('#star_1').tab('show');
-  fetchReviews(selectedApp);
+  onTabClick(1);
 });
