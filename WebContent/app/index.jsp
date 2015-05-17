@@ -107,6 +107,7 @@
         <script src="js/highlight.js" type="text/javascript"></script>
         <script src="js/table-search.js" type="text/javascript"></script>
         <script src="js/main.js" type="text/javascript"></script>
+        <script src="js/clickEvents.js" type="text/javascript"></script>
         
 	</body>
 </html>
