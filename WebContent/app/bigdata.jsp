@@ -26,42 +26,35 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </button>
-	          <a class="navbar-brand" href="#">ConuSa</a>
+	          <a class="navbar-brand" href="index.jsp">ConuSa</a>
 	        </div>
 	        <div id="navbar" class="collapse navbar-collapse">
 	          <ul class="nav navbar-nav">
-	            <li class="active"><a href="#">Home</a></li>
-	            <li><a href="bigdata.jsp">BigData</a></li>
+	            <li><a href="index.jsp">Home</a></li>
+	            <li class="active"><a href="bigdata.html">BigData</a></li>
 	            <li><a href="#contact">Contact</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>
 	    </nav>
-	    
+		
+			    
 	    <div class="container">
 	    	<div class="inner_container">
-	    		<ul id="app_list">
-	    		</ul>
 	    	</div>
 	    </div>
-
-		
-	    <div class="container">
-	    	<div id="app_info" class="chart-horiz">
-				<h1 id="app_title">Dropbox</h1>
-				<ul class="chart" id="app_rating_chart">
-  					<li class="title" title="Rating"></li>
-  				</ul>
-	    	</div>
-	    </div>
-	
 		
 	    <div class="container">
 	    	<div class="">
 	    		<div role="tabpanel">
 				  <!-- Nav tabs -->
 				  <ul class="nav nav-tabs" role="tablist">
-				    <li role="presentation" class="active" id="tab_star_5">
+				  	<li role="presentation" class="active" id="tab_star_all">
+				    	<a href="#star_all" aria-controls="star_all" role="tab" data-toggle="tab">
+							All
+				    	</a>
+				    </li>
+				    <li role="presentation" id="tab_star_5">
 				    	<a href="#star_5" aria-controls="star_5" role="tab" data-toggle="tab">
 				    		<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
 				    	</a>
@@ -88,18 +81,13 @@
 				    </li>
 				  </ul>
 				  
-				  
-				  <!-- Review Count -->
-				  <div id="review_count"></div>
-				  
-				  <!-- Occurence Map -->
-				  <div id="word_occurence"></div>
-				  
-				  <input type="text" id="search_table" placeholder="Search reviews..."/>
 				  <!--  <span class="badge">42</span>  -->
 				  <!-- Tab panes -->
 				  <div class="tab-content">
-				    <div role="tabpanel" class="tab-pane active" id="star_5">
+				  	<div role="tabpanel" class="tab-pane active" id="star_all">
+				    	
+				    </div>
+				    <div role="tabpanel" class="tab-pane" id="star_5">
 				    	
 				    </div>
 				    <div role="tabpanel" class="tab-pane" id="star_4">
@@ -125,8 +113,8 @@
         <script src="js/horizontalChart.js" type="text/javascript"></script>
         <script src="js/highlight.js" type="text/javascript"></script>
         <script src="js/table-search.js" type="text/javascript"></script>
-        <script src="js/main.js" type="text/javascript"></script>
-        <script src="js/clickEvents.js" type="text/javascript"></script>
+        <script src="js/bigdata.js" type="text/javascript"></script>
+        <script src="js/clickEventsBigData.js" type="text/javascript"></script>
         
 	</body>
 </html>
