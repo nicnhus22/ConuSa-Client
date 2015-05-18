@@ -32,7 +32,7 @@
 	          <ul class="nav navbar-nav">
 	            <li><a href="index.jsp">Home</a></li>
 	            <li class="active"><a href="bigdata.html">BigData</a></li>
-	            <li><a href="#contact">Contact</a></li>
+	            <li><a href="analysis.jsp">Analysis</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>

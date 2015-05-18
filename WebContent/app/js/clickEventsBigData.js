@@ -1,11 +1,9 @@
 	
 function onTabClick(tabNumber){
-	$(selectedTabHeader+" a").children('span.badge').remove();
-	$('#search_table').val("");
 	selectedTab = "#star_"+tabNumber;
 	selectedTabHeader = "#tab_star_"+tabNumber; 
 	$('#star_'+tabNumber).tab('show');
-	fetchReviews(selectedApp);
+	fetchProbabilities(tabNumber,100);
 }
 
 $('#tab_star_5').click(function (e) {
