@@ -41,6 +41,10 @@
 			    
 	    <div class="container">
 	    	<div class="inner_container">
+	    		<form action="http://localhost:8080/conusa/backend/app/service/analyze" method="GET">
+	    			<textarea class="form-control" rows="3" placeholder="Enter a review..." name="review"></textarea>
+	    			<button type="submit" class="btn btn-primary">Analyze</button>	    			
+	    		</form>
 	    	</div>
 	    </div>
 		
@@ -50,8 +54,7 @@
         <script src="js/horizontalChart.js" type="text/javascript"></script>
         <script src="js/highlight.js" type="text/javascript"></script>
         <script src="js/table-search.js" type="text/javascript"></script>
-        <script src="js/bigdata.js" type="text/javascript"></script>
-        <script src="js/clickEventsBigData.js" type="text/javascript"></script>
+        <script src="js/analysis.js" type="text/javascript"></script>
         
 	</body>
 </html>
