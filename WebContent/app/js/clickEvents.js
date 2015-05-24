@@ -25,6 +25,11 @@ function onTabClick(tabNumber){
 	fetchReviews(selectedApp);
 }
 
+function onReviewClick(reviewID){
+	console.log(reviewID);
+}
+
+
 $('#tab_star_5').click(function (e) {
   e.preventDefault();
   onTabClick(5);

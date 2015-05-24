@@ -16,12 +16,28 @@ function fetchReviews(appName){
 	$.get("http://localhost:8080/conusa/backend/app/service/review", {name:appName,rating:selectedTab.substr(selectedTab.length - 1)} ,
 	    function(response) {
 
+			var overrider = '<div class="btn-group">'+
+							  '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">'+
+							    'Change <span class="caret"></span>'+
+							  '</button>'+
+							  '<ul class="dropdown-menu" role="menu">'+
+							    '<li><a href="#"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></a></li>'+
+							    '<li><a href="#"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></a></li>'+
+							    '<li><a href="#"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></a></li>'+
+							    '<li><a href="#"><i class="fa fa-star"></i><i class="fa fa-star"></i></a></li>'+
+							    '<li><a href="#"><i class="fa fa-star"></i></a></li>'+
+							  '</ul>'+
+							'</div>';
+		
 			// Display reviews
 			var reviewsTemplate = '';
 		    $.each(response.reviews, function(key,val){
-		       reviewsTemplate += '<tr><td>'+val+'</td></tr>';
+		       reviewsTemplate += '<tr class="review_text"><td onclick="onReviewClick(\''+val.id+'\')">'+val.text+'</td><td class="review_override">'+overrider+'</td></tr>';
 		    });
 			var table = '<table class="table table-hover">'+
+							'<thead>'+
+								'<tr><th>Review</th><th>Override</th></tr>'+
+							'</thead>'+
 							'<tbody>'+
 								reviewsTemplate
 							'</tbody>'+

@@ -55,7 +55,13 @@ ul#app_list li {
 	padding: 15px;
 }
 
+.review_override {
+	visibility:hidden;
+}
 
+.review_text:hover .review_override {
+	visibility:visible;
+}
 
 
 
