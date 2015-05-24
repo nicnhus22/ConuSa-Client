@@ -21,18 +21,18 @@ function fetchReviews(appName){
 							    'Change <span class="caret"></span>'+
 							  '</button>'+
 							  '<ul class="dropdown-menu" role="menu">'+
-							    '<li><a href="#"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></a></li>'+
-							    '<li><a href="#"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></a></li>'+
-							    '<li><a href="#"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></a></li>'+
-							    '<li><a href="#"><i class="fa fa-star"></i><i class="fa fa-star"></i></a></li>'+
-							    '<li><a href="#"><i class="fa fa-star"></i></a></li>'+
+							    '<li><a href="javascript:void(0)" class="rate" star-rating="5"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></a></li>'+
+							    '<li><a href="javascript:void(0)" class="rate" star-rating="4"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></a></li>'+
+							    '<li><a href="javascript:void(0)" class="rate" star-rating="3"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></a></li>'+
+							    '<li><a href="javascript:void(0)" class="rate" star-rating="2"><i class="fa fa-star"></i><i class="fa fa-star"></i></a></li>'+
+							    '<li><a href="javascript:void(0)" class="rate" star-rating="1"><i class="fa fa-star"></i></a></li>'+
 							  '</ul>'+
 							'</div>';
 		
 			// Display reviews
 			var reviewsTemplate = '';
 		    $.each(response.reviews, function(key,val){
-		       reviewsTemplate += '<tr class="review_text"><td onclick="onReviewClick(\''+val.id+'\')">'+val.text+'</td><td class="review_override">'+overrider+'</td></tr>';
+		       reviewsTemplate += '<tr class="review_text"><td>'+val.text+'</td><td class="review_override" id="'+val.id+'">'+overrider+'</td></tr>';
 		    });
 			var table = '<table class="table table-hover">'+
 							'<thead>'+
@@ -43,6 +43,13 @@ function fetchReviews(appName){
 							'</tbody>'+
 						'</table>';
 			$(selectedTab).html(table);
+			
+			$('.rate').click(function(){
+				var rating = $(this).attr("star-rating");
+				var id	   = $(this).parent().parent().parent().parent().attr("id");
+				overrideReviewRating(id, rating);
+			});
+			
 			$('table.table').tableSearch({
                 searchText:'Search Table',
                 searchPlaceHolder:'Input Value'
@@ -102,4 +109,17 @@ function fetchAppInformation(appName){
 	    	  speed: 3000
 	    	});
 	    });
+}
+
+function overrideReviewRating(reviewID, ratingOverride){
+	var currentRating = selectedTab.substr(selectedTab.length - 1);
+	
+	$.ajax({
+	  method: "POST",
+	  url: "http://localhost:8080/conusa/backend/app/service/override",
+	  data: { id: reviewID, current: currentRating, override: ratingOverride }
+	})
+	.done(function( msg ) {
+		console.log(msg);
+	});
 }
