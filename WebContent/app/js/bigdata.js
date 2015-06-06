@@ -15,6 +15,7 @@ function fetchProbabilities(rating, limit){
 			  $.each(response, function(key,val){
 				  var prob = val;
 				  probaTemplate += '<tr><td>'+ranking+'</td><td>'+val.word+'</td><td>'+val.probability+'</td></tr>';
+				  console.log(ranking,val.word,val.probability);
 				  ranking++;
 			  });
 			  var table = '<table class="table table-hover">'+
